@@ -195,7 +195,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Color" id="ELy-px-dVd">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="nH5-F4-dNS">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nH5-F4-dNS">
                             <connections>
                                 <action selector="cancelPressed:" destination="gsI-NB-dAy" id="7Sn-Rd-ViQ"/>
                             </connections>
@@ -215,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYw-P2-Ffb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877.5999999999999" y="1527.8860569715143"/>
+            <point key="canvasLocation" x="1869" y="1658"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hna-fa-kA3">
