@@ -60,10 +60,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! ColorViewController
-        let index = sender as! Int
-        dest.color = colors[index].color
-        dest.colorName = colors[index].colorName
+        if let dest = segue.destination as? ColorViewController {
+            let index = sender as! Int
+            dest.color = colors[index].color
+            dest.colorName = colors[index].colorName
+        }
     }
 
     @IBAction func addNewColor(_ sender: Any) {
