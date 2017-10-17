@@ -23,24 +23,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = true
-            self.navigationController?.navigationItem.largeTitleDisplayMode = .always
-            navigationItem.hidesSearchBarWhenScrolling = false
 
-            let search = UISearchController(searchResultsController: nil)
-            search.searchResultsUpdater = self
-            search.dimsBackgroundDuringPresentation = false
-            self.navigationItem.searchController = search
-        }
+        search = UISearchController(searchResultsController: nil)
+        search?.searchResultsUpdater = self
+        search?.dimsBackgroundDuringPresentation = false
+        navigationItem.searchController = search
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (filterring) {
             return filteredcolors.count
