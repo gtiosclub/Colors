@@ -32,6 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
             let search = UISearchController(searchResultsController: nil)
             search.searchResultsUpdater = self
+            search.dimsBackgroundDuringPresentation = false
             self.navigationItem.searchController = search
         }
     }
