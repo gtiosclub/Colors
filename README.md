@@ -2,7 +2,7 @@
 ### Kay Yin (Adopted From Brian Wang's Color Spec Sample Code)
 #### For October 17th, 2017 meeting
 
-Used to have people try to build a color spec app on their own.
+Kay teaches how to build apps with multiple screens. This is useful as it lets you build apps that are more complex than what we've already done.
 
 Screenshots:
 
