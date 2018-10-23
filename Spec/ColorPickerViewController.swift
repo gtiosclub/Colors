@@ -10,10 +10,9 @@ import UIKit
 
 class ColorPickerViewController: UIViewController {
     
+    //MARK: - Presentation & Completion
     
-    //MARK: - Presentation
-    
-    static func present(over presenter: UIViewController, completion: @escaping ((color: UIColor, name: String)?) -> ()) {
+    static func present(over presenter: UIViewController, completion: ((UIColor?) -> (Void))?) {
         let navigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "colorPickerNavigation") as! UINavigationController
         
         let colorController = navigation.childViewControllers.first as! ColorPickerViewController
@@ -22,25 +21,28 @@ class ColorPickerViewController: UIViewController {
         presenter.present(navigation, animated: true, completion: nil)
     }
     
+    var completion: ((UIColor?) -> ())?
+    
+
+    // MARK: - UIViewController
+    
+    override func viewDidLoad() {
+        self.updateColor()
+    }
+    
     
     //MARK: - Properties
     
-    @IBOutlet weak var colorView: UIView!
-    @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var blueSlider: UISlider!
-    
-    var completion: (((UIColor, String)?) -> ())?
+    @IBOutlet private weak var colorView: UIView!
+    @IBOutlet private weak var redSlider: UISlider!
+    @IBOutlet private weak var greenSlider: UISlider!
+    @IBOutlet private weak var blueSlider: UISlider!
     
     var currentColor: UIColor {
-        let red = CGFloat(redSlider.value) / 256
-        let green = CGFloat(greenSlider.value) / 256
-        let blue = CGFloat(blueSlider.value) / 256
+        let red = CGFloat(redSlider.value) / 255
+        let green = CGFloat(greenSlider.value) / 255
+        let blue = CGFloat(blueSlider.value) / 255
         return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-    }
-    
-    override func viewDidLoad() {
-        self.colorView.backgroundColor = self.currentColor
     }
     
     
@@ -53,6 +55,7 @@ class ColorPickerViewController: UIViewController {
     @IBAction func donePressed(_ sender: Any) {
         
         //now we have to ask for the name
+        /*
         let alert = UIAlertController(title: "Name your new Color", message: nil, preferredStyle: .alert)
         
         alert.addTextField(configurationHandler: { textField in
@@ -76,11 +79,15 @@ class ColorPickerViewController: UIViewController {
         }))
         
         self.present(alert, animated: true, completion: nil)
+ 
+        */
+        
+        self.completion?(self.currentColor)
+        
     }
     
-    @IBAction func cancelPressed(_ sender: Any) {
+    @IBAction func cancelPressed(_ sender: Any?) {
         self.completion?(nil)
-        self.dismiss(animated: true, completion: nil)
     }
     
 }
