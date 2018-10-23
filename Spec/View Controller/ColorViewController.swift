@@ -10,7 +10,7 @@ import UIKit
 
 class ColorViewController: UIViewController {
     
-    var color:UIColor!
+    var color: UIColor!
     
     @IBOutlet private weak var label: UILabel!
     private var showColor = true
