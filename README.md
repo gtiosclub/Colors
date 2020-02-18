@@ -1,5 +1,5 @@
 # Colors
-#### Meeting of October 23, 2018
+#### Meeting of February 18, 2020
 
 This app features color saving & viewing using multiple View Controllers. Using more than one View Controller lets you build apps that are more complex than what we've done before. Colors includes:
 * A primary collection view controller to explore all saved colors
@@ -9,6 +9,6 @@ This app features color saving & viewing using multiple View Controllers. Using 
 
 ##### App Screenshots:
 
-<img src="screenshots/image1.png" width="375">
-<img src="screenshots/image2.png" width="375">
-<img src="screenshots/image3.png" width="375">
+<img src="Screenshots/image1.png" width="290">
+<img src="Screenshots/image2.png" width="290">
+<img src="Screenshots/image3.png" width="290">
