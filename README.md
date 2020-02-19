@@ -7,8 +7,14 @@ This app features color saving & viewing using multiple View Controllers. Using 
 * A detail view controller that fills the screen with a chosen color, presented in the navigation stack
 * Dependency injection for the view controller presentations via both segues and a static presentation method
 
-##### App Screenshots:
+### App Screenshots:
 
 <img src="Screenshots/image1.png" width="290">
 <img src="Screenshots/image2.png" width="290">
 <img src="Screenshots/image3.png" width="290">
+
+<br></br>
+
+<img src="Screenshots/image1-dark.png" width="290">
+<img src="Screenshots/image2-dark.png" width="290">
+<img src="Screenshots/image3-dark.png" width="290">
