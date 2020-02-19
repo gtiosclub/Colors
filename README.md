@@ -15,8 +15,6 @@ This app features color saving & viewing using multiple View Controllers. Using 
 <img src="Assets/image3.png" width=250em>
 </p>
 
-<br></br>
-
 <p align="center">
 <img src="Assets/image1-dark.png" width=250em>
 <img src="Assets/image2-dark.png" width=250em>
