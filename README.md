@@ -10,13 +10,13 @@ This app features color saving & viewing using multiple View Controllers. Using 
 ### App Screenshots:
 
 <p align="center">
-<img src="Assets/image1.png" width=250em>
-<img src="Assets/image2.png" width=250em>
-<img src="Assets/image3.png" width=250em>
+<img src="Assets/image1.png" width=275em>
+<img src="Assets/image2.png" width=275em>
+<img src="Assets/image3.png" width=275em>
 </p>
 
 <p align="center">
-<img src="Assets/image1-dark.png" width=250em>
-<img src="Assets/image2-dark.png" width=250em>
-<img src="Assets/image3-dark.png" width=250em>
+<img src="Assets/image1-dark.png" width=275em>
+<img src="Assets/image2-dark.png" width=275em>
+<img src="Assets/image3-dark.png" width=275em>
 </p>
