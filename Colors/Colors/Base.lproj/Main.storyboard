@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fJ4-PV-XAO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V5B-UW-UBo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,24 +13,44 @@
         <!--Color Name-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ColorDetailViewController" customModule="Colors" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Detail" id="BYZ-38-t0r" customClass="ColorDetailViewController" customModule="Colors" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TvG-Yd-lkD">
-                                <rect key="frame" x="24" y="152" width="366" height="686"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="24" y="142" width="366" height="696"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1yn-KI-eIf">
+                                <rect key="frame" x="24" y="100" width="370" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Of-n1-Nqe">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
+                                        <state key="normal" title="Copy"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIw-s5-Qap">
+                                        <rect key="frame" x="130" y="0.0" width="110" height="30"/>
+                                        <state key="normal" title="Rename"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1g-Xi-rSY">
+                                        <rect key="frame" x="260" y="0.0" width="110" height="30"/>
+                                        <state key="normal" title="Edit"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="TvG-Yd-lkD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Rfe-Cx-NsP"/>
-                            <constraint firstItem="TvG-Yd-lkD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="XJ3-fN-370"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TvG-Yd-lkD" secondAttribute="bottom" constant="24" id="Y7a-mE-6LC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TvG-Yd-lkD" secondAttribute="trailing" constant="24" id="v24-cC-C4x"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TvG-Yd-lkD" firstAttribute="top" secondItem="1yn-KI-eIf" secondAttribute="bottom" constant="12" id="2nH-jz-hb1"/>
+                            <constraint firstItem="1yn-KI-eIf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="QCN-i2-mA6"/>
+                            <constraint firstItem="TvG-Yd-lkD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Rfe-Cx-NsP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TvG-Yd-lkD" secondAttribute="bottom" constant="24" id="Y7a-mE-6LC"/>
+                            <constraint firstItem="1yn-KI-eIf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="dj7-w1-xVQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TvG-Yd-lkD" secondAttribute="trailing" constant="24" id="v24-cC-C4x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1yn-KI-eIf" secondAttribute="trailing" constant="20" id="vk9-w6-4i2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Color Name" id="uTL-jo-gUc"/>
                     <connections>
@@ -37,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="96"/>
+            <point key="canvasLocation" x="1860.8695652173915" y="95.758928571428569"/>
         </scene>
         <!--Colors-->
         <scene sceneID="e7a-vA-r7J">
@@ -46,7 +68,6 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="AGm-T3-fmZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b6i-tR-88z">
                             <size key="itemSize" width="206" height="190"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -78,7 +99,6 @@
                                 <size key="customSize" width="206" height="190"/>
                                 <connections>
                                     <outlet property="colorTitleLabel" destination="Vcl-vq-M7Z" id="Zz1-HX-hdI"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="vQl-ZD-kst"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -89,7 +109,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Colors" id="oKX-iC-fcm">
                         <barButtonItem key="rightBarButtonItem" image="plus.circle.fill" catalog="system" id="ULo-SK-XWS">
-                            <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" systemColor="systemPinkColor"/>
                             <connections>
                                 <action selector="didTapCreateColor:" destination="Qn1-ER-FFI" id="gv6-k7-v0n"/>
                             </connections>
@@ -100,6 +120,19 @@
             </objects>
             <point key="canvasLocation" x="992.75362318840587" y="95.758928571428569"/>
         </scene>
+        <!--Split View Controller-->
+        <scene sceneID="rsV-69-n7Q">
+            <objects>
+                <splitViewController hidesBottomBarWhenPushed="YES" allowDoubleColumnStyle="YES" id="V5B-UW-UBo" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="fJ4-PV-XAO" kind="relationship" relationship="masterViewController" id="i47-FV-3x3"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="detailViewController" id="hAT-AS-Zvu"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ws7-Fu-a3t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-859" y="-135"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="IIu-R7-f4R">
             <objects>
@@ -108,7 +141,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="i9x-7W-U7I">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" systemColor="systemPinkColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -158,21 +191,21 @@
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="76" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="P8c-L6-dmV">
                                                 <rect key="frame" x="-2" y="0.0" width="222.5" height="31"/>
-                                                <color key="minimumTrackTintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                                 <connections>
                                                     <action selector="updateColor" destination="GAk-Yp-tzO" eventType="valueChanged" id="GjI-Dk-hgx"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="138" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="jrN-RC-mzw">
                                                 <rect key="frame" x="-2" y="50" width="222.5" height="31"/>
-                                                <color key="minimumTrackTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                                 <connections>
                                                     <action selector="updateColor" destination="GAk-Yp-tzO" eventType="valueChanged" id="GsM-Rm-RiZ"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="200" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="WIk-P7-9cC">
                                                 <rect key="frame" x="-2" y="100" width="222.5" height="31"/>
-                                                <color key="minimumTrackTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                                 <connections>
                                                     <action selector="updateColor" destination="GAk-Yp-tzO" eventType="valueChanged" id="rY7-Ht-3d5"/>
                                                 </connections>
@@ -186,10 +219,11 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzk-77-pMY">
                                 <rect key="frame" x="40" y="168" width="334" height="484"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="l1j-AD-iLw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="l1j-AD-iLw" firstAttribute="bottom" secondItem="obq-nb-FIq" secondAttribute="bottom" constant="40" id="MQS-k7-Mvs"/>
                             <constraint firstItem="l1j-AD-iLw" firstAttribute="trailing" secondItem="lzk-77-pMY" secondAttribute="trailing" constant="40" id="fzS-uX-7m0"/>
@@ -198,17 +232,16 @@
                             <constraint firstItem="obq-nb-FIq" firstAttribute="top" secondItem="lzk-77-pMY" secondAttribute="bottom" constant="40" id="jKY-3L-26v"/>
                             <constraint firstItem="lzk-77-pMY" firstAttribute="leading" secondItem="l1j-AD-iLw" secondAttribute="leading" constant="40" id="wRA-dO-VPa"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="l1j-AD-iLw"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Color" id="0mI-vo-Gvu">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WLx-55-AMk">
-                            <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" systemColor="systemPinkColor"/>
                             <connections>
                                 <action selector="cancelPressed:" destination="GAk-Yp-tzO" id="Y3R-Ee-Sge"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="ToM-aS-dOo">
-                            <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" systemColor="systemPinkColor"/>
                             <connections>
                                 <action selector="savePressed:" destination="GAk-Yp-tzO" id="9uy-ef-UtE"/>
                             </connections>
@@ -245,6 +278,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

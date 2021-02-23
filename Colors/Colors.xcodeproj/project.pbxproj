@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17CCED9625CC8CB100F0982D /* ToolbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCED9525CC8CB100F0982D /* ToolbarDelegate.swift */; };
 		911A05A323FCAF79002B8B56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A05A223FCAF79002B8B56 /* AppDelegate.swift */; };
 		911A05A523FCAF79002B8B56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A05A423FCAF79002B8B56 /* SceneDelegate.swift */; };
 		911A05A723FCAF79002B8B56 /* ColorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A05A623FCAF79002B8B56 /* ColorDetailViewController.swift */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17425E9425CB2E2800BA71A5 /* Colors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Colors.entitlements; sourceTree = "<group>"; };
+		17CCED9525CC8CB100F0982D /* ToolbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarDelegate.swift; sourceTree = "<group>"; };
 		911A059F23FCAF79002B8B56 /* Colors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		911A05A223FCAF79002B8B56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		911A05A423FCAF79002B8B56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,8 +65,10 @@
 		911A05A123FCAF79002B8B56 /* Colors */ = {
 			isa = PBXGroup;
 			children = (
+				17425E9425CB2E2800BA71A5 /* Colors.entitlements */,
 				911A05A223FCAF79002B8B56 /* AppDelegate.swift */,
 				911A05A423FCAF79002B8B56 /* SceneDelegate.swift */,
+				17CCED9525CC8CB100F0982D /* ToolbarDelegate.swift */,
 				911A05B623FCAF95002B8B56 /* Controller */,
 				911A05B923FCB149002B8B56 /* Model */,
 				911A05A823FCAF79002B8B56 /* Main.storyboard */,
@@ -167,6 +172,7 @@
 				911A05A723FCAF79002B8B56 /* ColorDetailViewController.swift in Sources */,
 				911A05A323FCAF79002B8B56 /* AppDelegate.swift in Sources */,
 				911A05BB23FCB15C002B8B56 /* Color.swift in Sources */,
+				17CCED9625CC8CB100F0982D /* ToolbarDelegate.swift in Sources */,
 				911A05BD23FCBB61002B8B56 /* CreateColorViewController.swift in Sources */,
 				911A05A523FCAF79002B8B56 /* SceneDelegate.swift in Sources */,
 			);
@@ -312,18 +318,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Colors/Colors.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V7HL83ZN6U;
+				DEVELOPMENT_TEAM = D7DS2U3H59;
 				INFOPLIST_FILE = Colors/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cliffpanos.Colors;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -331,18 +340,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Colors/Colors.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V7HL83ZN6U;
+				DEVELOPMENT_TEAM = D7DS2U3H59;
 				INFOPLIST_FILE = Colors/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cliffpanos.Colors;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};

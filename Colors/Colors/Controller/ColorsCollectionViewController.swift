@@ -11,11 +11,29 @@ import UIKit
 class ColorsCollectionViewController: UICollectionViewController {
 
     // MARK: - UIViewController
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.collectionView.collectionViewLayout = self.collectionViewLayout(for: self.view.frame.size)
+       
+        let frame = CGSize(width:  self.splitViewController?.preferredPrimaryColumnWidth ?? 0, height: self.view.frame.size.height)
+        self.collectionView.collectionViewLayout = self.collectionViewLayout(for: frame)
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "newColorTapped"), object: nil, queue: .main) { [weak self] (_) in
+            self?.didTapCreateColor(nil)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        #if targetEnvironment(macCatalyst)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        #endif
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "newColorTapped"), object: nil)
+        super.viewDidDisappear(animated)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -43,13 +61,14 @@ class ColorsCollectionViewController: UICollectionViewController {
             if let indexPath = indexPath {
                 detailVC.color = self.colors[indexPath.row]
             }
+            
         }
     }
     
     
     // MARK: - Navigation using a static presenter + completion handler pattern
     
-    @IBAction private func didTapCreateColor(_ sender: UIBarButtonItem) {
+    @IBAction private func didTapCreateColor(_ sender: UIBarButtonItem?) {
         CreateColorViewController.present(over: self, completion: { color in
             if let createdColor = color {
                 self.colors.append(createdColor)
@@ -76,6 +95,41 @@ class ColorsCollectionViewController: UICollectionViewController {
         cell.decorate(for: self.colors[indexPath.row])
     
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailVC = storyboard.instantiateViewController(withIdentifier: "Detail") as! ColorDetailViewController
+        detailVC.color = self.colors[indexPath.row]
+        self.splitViewController?.showDetailViewController(detailVC, sender: self)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView,
+                                 contextMenuConfigurationForItemAt indexPath: IndexPath,
+                                 point: CGPoint) -> UIContextMenuConfiguration? {
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { suggestedActions in
+            let inspectAction =
+                        UIAction(title: "Open",
+                                 image: UIImage(systemName: "arrow.up.square")) { action in
+                            self.collectionView(collectionView, didSelectItemAt: indexPath)
+                        }
+                        
+                    let duplicateAction =
+                        UIAction(title: "Duplicate",
+                                 image: UIImage(systemName: "plus.square.on.square")) { action in
+                            let createdColor = self.colors[indexPath.row]
+                            self.colors.append(createdColor)
+                            self.collectionView.insertItems(at: [IndexPath(row: self.colors.count - 1, section: 0)])
+                        }
+                        
+                    let deleteAction =
+                        UIAction(title: "Delete",
+                                 image: UIImage(systemName: "trash"),
+                                 attributes: .destructive) { action in
+                           
+                        }
+            return UIMenu(title: "", children: [inspectAction, duplicateAction, deleteAction])
+        }
     }
     
     

@@ -9,10 +9,10 @@
 import UIKit
 
 class ColorDetailViewController: UIViewController {
-
+    
     // MARK: - Public
     
-    public var color: Color!
+    public var color: Color = Color(name: "No Color Selected", color: .clear)
     
     
     // MARK: - UIViewController
@@ -26,11 +26,19 @@ class ColorDetailViewController: UIViewController {
         self.contentView.backgroundColor = self.color.color
         self.navigationItem.title = color.name
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        #if targetEnvironment(macCatalyst)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        #endif
+    }
+    
     
     // MARK: - Private
     
     @IBOutlet private weak var contentView: UIView!
-
+    
 }
 
