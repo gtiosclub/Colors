@@ -9,27 +9,23 @@
 /* Begin PBXBuildFile section */
 		911A05A323FCAF79002B8B56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A05A223FCAF79002B8B56 /* AppDelegate.swift */; };
 		911A05A523FCAF79002B8B56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A05A423FCAF79002B8B56 /* SceneDelegate.swift */; };
-		911A05A723FCAF79002B8B56 /* ColorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A05A623FCAF79002B8B56 /* ColorDetailViewController.swift */; };
 		911A05AA23FCAF79002B8B56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911A05A823FCAF79002B8B56 /* Main.storyboard */; };
 		911A05AC23FCAF7B002B8B56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 911A05AB23FCAF7B002B8B56 /* Assets.xcassets */; };
 		911A05AF23FCAF7B002B8B56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911A05AD23FCAF7B002B8B56 /* LaunchScreen.storyboard */; };
-		911A05B823FCB0B8002B8B56 /* ColorsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A05B723FCB0B8002B8B56 /* ColorsCollectionViewController.swift */; };
+		911A05B823FCB0B8002B8B56 /* Snippets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A05B723FCB0B8002B8B56 /* Snippets.swift */; };
 		911A05BB23FCB15C002B8B56 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A05BA23FCB15C002B8B56 /* Color.swift */; };
-		911A05BD23FCBB61002B8B56 /* CreateColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A05BC23FCBB61002B8B56 /* CreateColorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		911A059F23FCAF79002B8B56 /* Colors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		911A05A223FCAF79002B8B56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		911A05A423FCAF79002B8B56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		911A05A623FCAF79002B8B56 /* ColorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailViewController.swift; sourceTree = "<group>"; };
 		911A05A923FCAF79002B8B56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		911A05AB23FCAF7B002B8B56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		911A05AE23FCAF7B002B8B56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		911A05B023FCAF7B002B8B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		911A05B723FCB0B8002B8B56 /* ColorsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsCollectionViewController.swift; sourceTree = "<group>"; };
+		911A05B723FCB0B8002B8B56 /* Snippets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snippets.swift; sourceTree = "<group>"; };
 		911A05BA23FCB15C002B8B56 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		911A05BC23FCBB61002B8B56 /* CreateColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateColorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +39,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17D4731E25E5A4C900075967 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		911A059623FCAF79002B8B56 = {
 			isa = PBXGroup;
 			children = (
@@ -64,7 +67,8 @@
 			children = (
 				911A05A223FCAF79002B8B56 /* AppDelegate.swift */,
 				911A05A423FCAF79002B8B56 /* SceneDelegate.swift */,
-				911A05B623FCAF95002B8B56 /* Controller */,
+				911A05B723FCB0B8002B8B56 /* Snippets.swift */,
+				17D4731E25E5A4C900075967 /* Controller */,
 				911A05B923FCB149002B8B56 /* Model */,
 				911A05A823FCAF79002B8B56 /* Main.storyboard */,
 				911A05AB23FCAF7B002B8B56 /* Assets.xcassets */,
@@ -72,16 +76,6 @@
 				911A05B023FCAF7B002B8B56 /* Info.plist */,
 			);
 			path = Colors;
-			sourceTree = "<group>";
-		};
-		911A05B623FCAF95002B8B56 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				911A05B723FCB0B8002B8B56 /* ColorsCollectionViewController.swift */,
-				911A05A623FCAF79002B8B56 /* ColorDetailViewController.swift */,
-				911A05BC23FCBB61002B8B56 /* CreateColorViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		911A05B923FCB149002B8B56 /* Model */ = {
@@ -120,7 +114,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = "Clifford Panos";
+				ORGANIZATIONNAME = "Phil Z";
 				TargetAttributes = {
 					911A059E23FCAF79002B8B56 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -163,11 +157,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				911A05B823FCB0B8002B8B56 /* ColorsCollectionViewController.swift in Sources */,
-				911A05A723FCAF79002B8B56 /* ColorDetailViewController.swift in Sources */,
+				911A05B823FCB0B8002B8B56 /* Snippets.swift in Sources */,
 				911A05A323FCAF79002B8B56 /* AppDelegate.swift in Sources */,
 				911A05BB23FCB15C002B8B56 /* Color.swift in Sources */,
-				911A05BD23FCBB61002B8B56 /* CreateColorViewController.swift in Sources */,
 				911A05A523FCAF79002B8B56 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
